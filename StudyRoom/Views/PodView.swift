@@ -17,28 +17,32 @@ struct PodView: View {
         Button {
             model.togglePod(pod.id)
         } label: {
-            VStack(spacing: 16) {
+            // Font sizes are kept small enough that everything fits inside the
+            // card; tvOS text styles are large, and anything taller gets clipped.
+            VStack(spacing: 12) {
                 Image(systemName: pod.isFocused ? "brain.head.profile" : "moon.zzz.fill")
-                    .font(.system(size: 60))
+                    .font(.system(size: 48))
 
                 Text(pod.name)
-                    .font(.title2)
+                    .font(.title3)
                     .bold()
 
                 Text(pod.goal)
-                    .font(.title3)
+                    .font(.headline)
                     .multilineTextAlignment(.center)
+                    .lineLimit(2)
 
                 Text(formatTime(pod.focusSeconds))
-                    .font(.title2)
+                    .font(.title3)
                     .monospacedDigit()
 
                 Text(pod.isFocused ? "Focusing" : "Press to focus")
-                    .font(.title3)
+                    .font(.headline)
                     .bold()
             }
-            .padding(24)
-            .frame(width: 320, height: 380)
+            .minimumScaleFactor(0.7)   // shrink text slightly rather than cut it off
+            .padding(20)
+            .frame(width: 340, height: 400)
             // Strong colour when focusing, faded when not.
             .background(pod.color.opacity(pod.isFocused ? 0.85 : 0.3))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
