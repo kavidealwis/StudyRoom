@@ -1,0 +1,10 @@
+.DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+.build/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Lecture slides and lab sheets belong to the module; keep them local only
+course-material/
