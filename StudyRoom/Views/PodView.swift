@@ -47,7 +47,7 @@ struct PodView: View {
             .background(pod.color.opacity(pod.isFocused ? 0.85 : 0.3))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         }
-        // NEW CONCEPT (not in labs): tvOS focus and .buttonStyle(.card)
+        // tvOS focus and .buttonStyle(.card)
         // On Apple TV there is no touch screen; the remote moves a "focus"
         // highlight between buttons. The card style (tvOS only) makes the
         // focused pod lift up and tilt, so everyone can see which one is selected.

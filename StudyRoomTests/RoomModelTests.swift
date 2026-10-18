@@ -6,7 +6,7 @@
 //  for real seconds, so the whole suite runs instantly.
 //
 
-// NEW CONCEPT (not in labs): XCTest
+
 // Apple's testing framework. Each method starting with "test" is run by
 // Cmd + U; XCTAssertEqual fails the test if the two values are different.
 import XCTest

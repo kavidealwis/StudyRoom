@@ -39,12 +39,12 @@ enum Phase {
 
 // MARK: - RoomModel
 
-// NEW CONCEPT (not in labs): @Observable
+
 // A class marked @Observable tells SwiftUI "watch my properties".
 // When any property changes, every view that reads it redraws by itself,
 // just like @State does for a single value inside one view.
 //
-// NEW CONCEPT (not in labs): @MainActor
+
 // The main actor is the main thread, where the screen is drawn.
 // Marking the class @MainActor keeps all its code there, so the timer
 // can never change the data at the same moment the screen is reading it.
@@ -61,7 +61,7 @@ final class RoomModel {
     var demoMode = true                 // short timers for live demos
     var cyclesDone = 0
 
-    // NEW CONCEPT (not in labs): UserDefaults
+    
     // A small key-value store that survives closing the app.
     // Here it reads the saved streak (0 if nothing was saved yet).
     var streak = UserDefaults.standard.integer(forKey: "roomStreak")
@@ -135,7 +135,7 @@ final class RoomModel {
 
     // MARK: Timer
 
-    // NEW CONCEPT (not in labs): Task and async/await
+    
     // A Task is a piece of work that runs alongside the app without freezing it.
     // `await Task.sleep` waits one second without blocking the screen.
     // The loop calls tick() once per second until the task is cancelled.
